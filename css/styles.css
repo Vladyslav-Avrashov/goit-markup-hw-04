@@ -95,7 +95,6 @@ img {
 .navigates {
   display: flex;
   gap: 40px;
-  margin-right: 332px;
 }
 
 .navigates-item {
@@ -104,9 +103,12 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   display: block;
+}
+
+.actual {
+  color: #404bbf;
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: #404bbf;
 }
 
 .actual::after {
@@ -161,7 +163,7 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/background/people-office.jpg);
+    url(/images/people-office.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 1440px;
@@ -215,7 +217,6 @@ img {
   display: flex;
   border: 1px solid #8e8f99;
   border-radius: 4px;
-  width: 264px;
   height: 112px;
   background: #f4f4fd;
   margin-bottom: 8px;
@@ -280,38 +281,39 @@ img {
 
 .third .about {
   text-align: center;
+  margin-bottom: 8px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
 .social-block {
-  display: flex;
-  border: 1px solid;
-  border-radius: 50%;
   width: 40px;
   height: 40px;
-  background: #4d5ae5;
-  justify-content: center;
+}
+
+.social-icons {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  fill: #f4f4fd;
 }
 
 .social-list-links {
   display: flex;
-  fill: #ffffff;
-  color: #4d5ae5;
   gap: 24px;
   justify-content: center;
-  margin-top: 8px;
 }
 
-.social-links {
-  width: 100%;
-  height: 100%;
-}
-
-.social-block:hover,
-.social-block:focus {
+.social-icons:hover,
+.social-icons:focus {
   background: #404bbf;
   border: #404bbf;
 }
@@ -336,20 +338,39 @@ img {
 .projects-info {
   width: 360px;
   width: calc((100% - 24 * 4) / 6);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-info:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0%);
+}
+
+.specs {
+  padding: 32px 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+}
+
+.project-image {
   position: relative;
   overflow: hidden;
 }
 
-.projects-info:hover,
-.projects-info:focus {
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-}
-
-.projects-info .specs {
-  padding: 32px 16px;
-  border: 1px solid #e7e9fc;
-  border-top: none;
+.extra-text {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  background-color: #4d5ae5;
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product {
@@ -361,36 +382,24 @@ img {
   color: #2e2f42;
 }
 
+.additional-color {
+  fill: #4d5ae5;
+}
+
 .type {
   line-height: 1.5;
   letter-spacing: 0.02em;
-}
-
-.extra {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 164px;
-  transform: translateY(100%);
-  background-color: #4d5ae5;
-  color: #ffffff;
-  overflow-y: auto;
-  transition: transform 250ms linear;
-}
-
-.projects-info:hover .extra {
-  transform: translateY(0%);
 }
 
 .footer {
   padding: 100px 0;
   background-color: #2e2f42;
   color: #ffffff;
+}
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
 }
 
 .footer .logo {
@@ -402,6 +411,10 @@ img {
   color: #f4f4fd;
 }
 
+.logo-slogan {
+  margin-right: 120px;
+}
+
 .slogan {
   padding-bottom: 100px;
   padding-right: 864px;
@@ -411,15 +424,20 @@ img {
 }
 
 .socials {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
-footer .social-list-links {
-  justify-content: flex-start;
+.socials-container .social-list-links {
+  display: flex;
+  gap: 16px;
 }
 
-footer .social-block:hover,
-footer .social-block:focus {
+.socials-container .social-icons:hover,
+.socials-container .social-icons:focus {
   background: #31d0aa;
-  border: #31d0aa;
 }
